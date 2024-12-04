@@ -1,0 +1,11 @@
+{
+  "name": "ebay-nodejs",
+  "version": "1.0.0",
+  "description": "proyecto nodejs para montar servicio gateway rest con express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
