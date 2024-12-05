@@ -1,0 +1,119 @@
+
+<div class='container'>
+    <!--  fila donde va logo de ebay y link para el Login -->
+    <div class='row mt-4'>
+        <div class='col-2'>
+             <a href="/Tienda/Productos"><img src='/images/logo_ebay.png' alt='loge Ebay'/> </a>
+        </div>
+        <div class='col-6'></div>
+        <div class='col-2'>
+            <span>¿Ya tienes una cuenta?</span>
+        </div>
+        <div class='col-2'>
+            <a href="/">Identificarse</a>
+        </div>
+    </div>
+
+    <!-- { /* fila donde va imagen de registro y formulario, depdende tipo de cuenta, si es PERSONAL o EMPRESA*/ }-->
+    <div class='row mt-4'>
+        <div class='col-8'><img src='/images/imagen_registro_personal.jpg' alt='Registro Personal'/></div>
+        <div class='col-4'>
+            <form [formGroup]="formRegistro" (ngSubmit)="RegistrarCliente($event)">
+                <div class='row'><h1 class='title'>Crear una cuenta</h1></div>
+                <div class="row">
+                    <div class="col form-floating">
+                        <input type="text"
+                               id='txtNombre'
+                               name='nombre'
+                               class="form-control form-element"
+                               placeholder="Nombre"
+                               formControlName="nombre"
+                               />
+                                <!--
+                                no nos interesa mostrar mensaje de error generico por estado invalido del input, sino q quiero mostrar mensaje personalizado
+                                en funcion del validador q falle para ello necesito recurrir a propiedad .errors de cada formControl
+                                @if(formRegistro.controls['nombre'].status==='INVALID'){<span class='text-danger'>* valor incorrecto del campo nombre</span>}
+                                -->
+                            @if(formRegistro.controls['nombre'].errors?.['required']  && formRegistro.controls['nombre'].dirty ){<span class='text-danger'>* Nombre obligatorio</span>}
+                            @if(formRegistro.controls['nombre'].errors?.['maxlength'] && formRegistro.controls['nombre'].dirty ){<span class='text-danger'>* max.de 100 chars en Nombre</span>}
+                            @if(formRegistro.controls['nombre'].errors?.['minlength'] && formRegistro.controls['nombre'].dirty ){<span class='text-danger'>* min.de 3 chars en Nombre</span>}
+
+                        <label for='txtNombre' class='floating-label'>Nombre</label>
+                    </div>
+                    <div class="col mb-3 form-floating">
+                        <input type="text" 
+                               id='txtApellidos'
+                               name='apellidos'
+                               class="form-control form-element"
+                               placeholder="Apellidos"
+                               formControlName="apellidos"
+                                />
+                            @if(formRegistro.controls['apellidos'].errors?.['required']  && formRegistro.controls['apellidos'].dirty ){<span class='text-danger'>* Apellidos obligatorios</span>}
+                            @if(formRegistro.controls['apellidos'].errors?.['maxlength'] && formRegistro.controls['apellidos'].dirty ){<span class='text-danger'>* max.de 250 chars en Apellidos</span>}
+                            @if(formRegistro.controls['apellidos'].errors?.['minlength'] && formRegistro.controls['apellidos'].dirty ){<span class='text-danger'>* min.de 4 chars en Apellidos</span>}
+                           
+                        <label for='txtApellidos' class='floating-label'>Apellidos</label>
+                    </div>
+                </div>
+                <div class="mb-3 form-floating">
+                    <input type="email"
+                           id='txtEmail'
+                           name='email'
+                           class="form-control form-element"
+                           placeholder="Correo electrónico"
+                           formControlName="email"
+                          />
+                    @if(formRegistro.controls['email'].errors?.['required']  && formRegistro.controls['email'].dirty ){<span class='text-danger'>* Email obligatorios</span>}
+                    @if(formRegistro.controls['email'].errors?.['pattern'] && formRegistro.controls['email'].dirty ){<span class='text-danger'>* Formato invalido de email</span>}
+
+                    <label for='txtEmail' class='floating-label'>Correo Electronico</label>
+                </div>
+                <div class="mb-3 form-floating">
+                    <input type="password"
+                           id='txtPassword'
+                           name='password'
+                           class="form-control form-element"
+                           placeholder="Contraseña"
+                           formControlName="password"
+                           />
+
+                    @if(formRegistro.controls['password'].errors?.['required']  && formRegistro.controls['password'].dirty ){<span class='text-danger'>* Contraseña obligatoria</span>}
+                    @if(formRegistro.controls['password'].errors?.['maxlength'] && formRegistro.controls['password'].dirty ){<span class='text-danger'>* max.de 20 chars en Contraseña</span>}
+                    @if(formRegistro.controls['password'].errors?.['minlength'] && formRegistro.controls['password'].dirty ){<span class='text-danger'>* min.de 6 chars en Contraseña</span>}
+                    @if(formRegistro.controls['password'].errors?.['pattern'] && formRegistro.controls['password'].dirty ){<span class='text-danger'>* Formato invalido Contraseña, 1 MAYS, 1 mins, 1 digito, 1 caracter raro</span>}
+      
+                    <label for='txtPassword' class='floating-label'>Contraseña</label>
+                </div>
+                <div class="mb-3" style='max-width: "430px; "'>
+                    <!-- {/*** minicomponente para desuscribirse */}-->
+                    <p class="text-small">
+                        Te enviaremos correos electrónicos sobre ofertas
+                        relacionadas con nuestros servicios periódicamente. Puedes 
+                        <a href="/" style='color: "#007bff";  text-decoration:"underline"'>
+                            cancelar la suscripción
+                        </a>
+                        en cualquier momento.
+                    </p>
+                    <p class="text-small">
+                        Al seleccionar Crear cuenta personal, aceptas nuestras
+                        Condiciones de uso y reconoces haber leído nuestro Aviso de
+                        privacidad.
+                    </p>
+                </div>
+                <button type="submit" class="mibtn w-100 mb-3" [disabled]="formRegistro.status!=='VALID'">
+                    Crear cuenta personal
+                </button>
+                <div class='row mt-3 d-flex flex-row'>
+                    <span class='separator-before'></span>
+                    <span class='text-small inseparator'>o continua con</span>
+                    <span class='separator-after'></span>
+                </div>
+                <div class='row'>
+                    <div class='col'><button class='redes' style='width: "100%;"'><i class="fa-brands fa-google"></i> Google</button></div>
+                    <div class='col'><button class='redes' style='width: "100%;"'><i class="fa-brands fa-facebook"></i> Facebook</button></div>
+                    <div class='col'><button class='redes' style='width: "100%;"'><i class="fa-brands fa-apple"></i> Apple</button></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> 

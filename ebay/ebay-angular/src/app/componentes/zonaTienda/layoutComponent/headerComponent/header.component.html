@@ -1,0 +1,108 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTop" aria-controls="navbarTop" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex flex-row justify-content-between" id="navbarTop">
+                <div>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+
+                            <a class="nav-link" href='/Cliente/Login'>Inicio Sesion</a>
+
+                        </li>
+                        <li class="nav-item drop-down">
+                            <a class="nav-link drop-down-toggle" href="#"  id="ofertasEbay" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ofertas de Ebay</a>
+                            <ul class="dropdown-menu" aria-labelledby="ofertasEbay">
+                                <!--  Aquí irían los productos de interés -->
+                            </ul>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sell">Ayuda</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dashboard">Vender</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/Cliente/Panel/ListaSeguimiento" id="listaSeguimiento" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Lista de seguimiento
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="listaSeguimiento">
+                                <!-- Aquí irían los productos de interés -->
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/Cliente/Panel/MiEbay" id="miEbayDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                MiEbay
+                            </a>
+                            <ul class="dropdown-menu " aria-labelledby="miEbayDropdown">
+                                <li><a class="dropdown-item" href="#recent">Vistos recientemente</a></li>
+                                <li><a class="dropdown-item" href="#bids">Pujas y ofertas</a></li>
+                                <li><a class="dropdown-item" href="#watchlist">Lista de seguimiento</a></li>
+                                <li><a class="dropdown-item" href="#watchlist">Historial de compras</a></li>
+                                <li><a class="dropdown-item" href="#selling">En Venta</a></li>
+                                <li><a class="dropdown-item" href="#selling">Busquedas guardadas</a></li>
+                                <li><a class="dropdown-item" href="#selling">Vendedores guardados</a></li>
+                                <li><a class="dropdown-item" href="#selling">Mi garaje</a></li>
+                                <li><a class="dropdown-item" href="#selling">Mensajes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dashboard">Notificaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cart"><i class="bi bi-cart3"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <a href='/'> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/EBay_logo.svg/2560px-EBay_logo.svg.png" alt="eBay Logo" height="40"/> </a>
+            </div>
+            <div class="col">
+                <form class="d-flex">
+                    <div class="input-group">
+                        <input class="form-control form-control-borderless" type="search" placeholder="Buscar artículos"/>
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Todas las categorías</button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                               <!-- Aquí irían las categorías -->
+                        </ul>
+                    </div>
+                    <div>
+                         <button class="btn btn-primary" type="submit">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- navbar con categorias principales.... -->
+        <div class='row mt-3'>
+
+
+                        <h3><strong>Mi eBay</strong></h3>
+                        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                            <div class="container-fluid">
+                                <ul class="navbar-nav">
+                                    <li  class="nav-item"> 
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>                            
+ 
+        </div>
+    </div>
+</header>
+
+

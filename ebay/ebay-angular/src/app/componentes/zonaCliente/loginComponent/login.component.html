@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class='row mt-4'>
+        <div class='col-3'><a href="/Tienda/Productos"><img src='/images/logo_ebay.png' alt='loge Ebay'/> </a></div>
+    </div>
+
+                <div class='row mt-4'>
+                    <div class="col-4"></div>
+                    <div class="col-3 d-flex flex-row justify-content-center"><h2 class='title'>Identificate en tu cuenta</h2></div>
+                </div>   
+                <div class='row'>
+                    <div class="col-4"></div>
+                    <div class="col-3 d-flex flex-row justify-content-center"><span class="sub-heading">¿Primera vez en eBay?</span><a href='/Cliente/Registro'>Crea una cuenta</a></div>
+                </div> 
+                <div class='row mt-4'>
+                    <div class='col-4'></div>
+                    <div class='col-3'>
+                        <div class="form-floating mb-3">
+                            <input type="email" 
+                                class="form-control"
+                                id="txtEmail"
+                                placeholder="name@example.com"
+                                />
+                            <label for="txtEmail">Correo electronico o pseudonimo</label>
+                        </div>
+                    </div>
+                </div>
+                <!--  para crear botones de Continuar ... un bucle, pero en JSX no puedo pone for, necesito funcion .map() de array -->
+                    <div class='row mt-2' key={posicion}>
+                        <div class='col-4'></div>                                    
+                        <div class='col-3'>
+                            <button type='button'
+                                    class="w-100 mibtn">
+                                <i class="fa-brands fa-Continuar fa-2xl"></i>
+                                Continuar
+                            </button>
+                        </div>
+                    </div>
+
+
+                <div class='row mt-4'>
+                    <div class='col-4'></div>
+                    <div class='col-3'><h3>Hola de nuevo</h3></div>
+                </div>
+                <div class='row mt-4'>
+                    <div class='col-4'></div>
+                    <div class='col-3'>
+                        <span>...email usuario...</span><a href='/'>Cambiar de cuenta</a>
+                    </div>
+                </div>
+                <div class='row mt-4'>
+                    <div class='col-4'></div>
+                    <div class='col-3'>
+                        <div class="form-floating mb-3">
+                            <input type="password" 
+                                class="form-control"
+                                id="txtPassword"
+                                />
+                            <label for="txtPassword">Contraseña</label>
+                        </div>
+                    </div>
+                </div>
+                <div class='row mt-4'>
+                    <div class='col-4'></div>
+                    <div class='col-3'>
+                        <button type='button'
+                                class='mibtn mibtn-light w-100'
+                        >
+                            Identificate
+                        </button>
+                    </div>
+                </div>                                      
+                <div class='row mt-4'>
+                    <div class='col-4'></div>
+                    <div class='col-3'>
+                        <a href='/'>Restablecer contraseña</a>
+                    </div>
+                </div>                        
+</div>
+
